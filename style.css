@@ -76,8 +76,7 @@ body {
 }
 
 .page-1,
-.page-2,
-.page-3 {
+.page-2 {
   width: 100%;
   height: 100vh;
 }
@@ -214,5 +213,71 @@ body {
 }
 
 .page-3 {
+  min-height: 100vh;
+  width: 100%;
+  padding: 20px;
   background-color: #fff;
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.image-col {
+  width: 33.33%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image {
+  cursor: pointer;
+  height: fit-content;
+  position: relative;
+  overflow: hidden;
+  transition: all linear 0.2s;
+}
+
+.image .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  position: absolute;
+  opacity: 0.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all linear 0.2s;
+  z-index: 11;
+}
+
+.overlay p {
+  color: #fff;
+  font-size: 4vw;
+  text-align: center;
+  opacity: 0;
+  transition: all linear 0.2s;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: all linear 0.2s;
+  transform: scale(1);
+}
+
+.image:hover img {
+  transform: scale(1.1);
+}
+
+.image:hover .overlay {
+  opacity: 1;
+}
+
+.image:hover p {
+  opacity: 1;
 }
