@@ -40,12 +40,57 @@ body {
   z-index: 9;
 }
 
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+  /* background-color: green; */
+}
+
+.collapse {
+  transition: all ease 0.3s;
+}
+
+.right .collapse i {
+  font-size: 25px;
+}
+
 .yellow1 {
   height: 100%;
   width: 100%;
   background-color: #f5e41b;
   position: absolute;
   z-index: 7;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav ul {
+  display: flex;
+  gap: 5vw;
+  /* background-color: blue; */
+  transition: all ease 0.3s;
+}
+
+.nav li {
+  text-decoration: none;
+  list-style: none;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  border-bottom: 1.5px solid transparent;
+  transition: all ease 0.3s;
+  /* background-color: red; */
+  overflow: hidden;
+}
+
+.nav li:hover {
+  border-bottom: 1.5px solid #000;
 }
 
 .yellow2 {
@@ -251,6 +296,7 @@ body {
   justify-content: center;
   transition: all linear 0.2s;
   z-index: 11;
+  padding: 1vw;
 }
 
 .overlay p {
@@ -280,4 +326,61 @@ body {
 
 .image:hover p {
   opacity: 1;
+}
+
+.footer {
+  width: 100%;
+  height: 150px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5vw;
+}
+
+.footer h5 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all ease-in-out 0.1s;
+}
+
+.footer h5:hover {
+  border-bottom: 2px solid #fff;
+}
+
+.footer .connect {
+  display: flex;
+  gap: 2vw;
+}
+
+.back-to-top {
+  padding: 2.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 50px; */
+  width: 100%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.back-to-top .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top i {
+  font-size: 4vw;
+  font-weight: 100;
+}
+
+.back-to-top p {
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
 }

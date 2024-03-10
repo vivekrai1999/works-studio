@@ -35,6 +35,10 @@ const scroll = new LocomotiveScroll({
   smooth: true,
 });
 
+document
+  .querySelector(".back-to-top")
+  .addEventListener("click", () => scroll.scrollTo(0));
+
 document.querySelectorAll(".main-text").forEach((elem) => {
   elem.addEventListener("mouseenter", (e) => {
     const container = e.target.querySelector("h2").innerText;
@@ -71,4 +75,27 @@ document.querySelectorAll(".main-text").forEach((elem) => {
   elem.addEventListener("mouseleave", () => {
     document.querySelector(".page-2").style.backgroundImage = "";
   });
+});
+
+document.querySelector(".collapse").addEventListener("click", (e) => {
+  const isOpen = document.querySelector(".collapse").classList.contains("open");
+  if (isOpen) {
+    document.querySelector(".collapse").classList.remove("open");
+    document.querySelector(".collapse").style.transform = "rotate(45deg)";
+    document.querySelectorAll(".menu-options li").forEach((elem, index) => {
+      if (index !== 0) {
+        elem.style.width = "0";
+      }
+    });
+    document.querySelector(".nav ul").style.gap = "0";
+  } else {
+    document.querySelector(".collapse").classList.add("open");
+    document.querySelector(".collapse").style.transform = "rotate(-45deg)";
+    document.querySelectorAll(".menu-options li").forEach((elem, index) => {
+      if (index !== 0) {
+        elem.style.width = "";
+      }
+    });
+    document.querySelector(".nav ul").style.gap = "5vw";
+  }
 });
